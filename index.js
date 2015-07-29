@@ -17,8 +17,8 @@ export default (date, fn) => {
 
     obj.root.children.forEach(function({children}) {
       rates[children[1].content.toLowerCase()] = {
-        par: children[2].content,
-        value: children[4].content
+        par: parseInt(children[2].content),
+        value: parseFloat(children[4].content.replace(/,/g, '.'))
       };
     });
 
