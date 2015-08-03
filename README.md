@@ -2,6 +2,8 @@
 
   > Get currency rates from Central Bank of Russia
 
+  [cbr-rates-cli][cbr-rates-cli] - CLI for this module
+
 ## Install
 
 ```sh
@@ -39,3 +41,5 @@ cbrRates(new Date(), fn);
 
 [travis-url]: https://travis-ci.org/andrepolischuk/cbr-rates
 [travis-image]: https://travis-ci.org/andrepolischuk/cbr-rates.svg?branch=master
+
+[cbr-rates-cli]: https://github.com/andrepolischuk/cbr-rates-cli
