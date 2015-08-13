@@ -1,5 +1,6 @@
 import format from 'dateformat';
 import isDate from 'is-date-object';
+import sortKeys from 'sort-keys';
 import {get} from 'superagent';
 import xmlParser from 'xml-parser';
 const url = 'http://www.cbr.ru/scripts/XML_daily.asp';
@@ -22,6 +23,6 @@ export default (date, fn) => {
       };
     });
 
-    fn(null, rates);
+    fn(null, sortKeys(rates));
   });
 };
