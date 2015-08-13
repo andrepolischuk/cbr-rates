@@ -16,7 +16,7 @@ export default (date, fn) => {
     const obj = xmlParser(text);
     const rates = {};
 
-    obj.root.children.forEach(function({children}) {
+    obj.root.children.forEach(({children}) => {
       rates[children[1].content.toLowerCase()] = {
         par: parseInt(children[2].content),
         value: parseFloat(children[4].content.replace(/,/g, '.'))

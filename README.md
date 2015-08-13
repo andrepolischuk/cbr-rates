@@ -16,8 +16,8 @@ npm install --save cbr-rates
 var cbrRates = require('cbr-rates');
 
 cbrRates(function(err, rates) {
-  rates.usd; // {par: ..., value: ...}
   rates.gbp; // {par: ..., value: ...}
+  rates.usd; // {par: ..., value: ...}
 });
 ```
 
