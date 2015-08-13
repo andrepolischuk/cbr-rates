@@ -6,6 +6,9 @@ describe('cbrRates(fn)', () => {
     cbrRates((err, rates) => {
       assert(!err, err);
       assert(rates && typeof rates === 'object');
+      assert(rates.usd && typeof rates.usd === 'object');
+      assert(typeof rates.usd.par === 'number');
+      assert(typeof rates.usd.value === 'number');
       done();
     });
   });
@@ -19,6 +22,9 @@ describe('cbrRates(date, fn)', () => {
     cbrRates(date, (err, rates) => {
       assert(!err, err);
       assert(rates && typeof rates === 'object');
+      assert(rates.usd && typeof rates.usd === 'object');
+      assert(typeof rates.usd.par === 'number');
+      assert(typeof rates.usd.value === 'number');
       done();
     });
   });
