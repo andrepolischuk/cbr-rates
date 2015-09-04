@@ -1,8 +1,8 @@
 # cbr-rates [![Build Status][travis-image]][travis-url]
 
-  > Get currency rates from Central Bank of Russia
+> Get currency rates from Central Bank of Russia
 
-  [cbr-rates-cli][cbr-rates-cli] - CLI for this module
+[cbr-rates-cli][cbr-rates-cli] - CLI for this module
 
 ## Install
 
@@ -25,11 +25,11 @@ cbrRates(function(err, rates) {
 
 ### cbrRates(fn)
 
-  Get object with last rates
+Get object with last rates
 
 ### cbrRates(date, fn)
 
-  Get object with rates for specified `date`
+Get object with rates for specified `date`
 
 ```js
 cbrRates(new Date(), fn);
@@ -37,7 +37,7 @@ cbrRates(new Date(), fn);
 
 ## License
 
-  MIT
+MIT
 
 [travis-url]: https://travis-ci.org/andrepolischuk/cbr-rates
 [travis-image]: https://travis-ci.org/andrepolischuk/cbr-rates.svg?branch=master
