@@ -1,31 +1,26 @@
+import test from 'ava';
 import cbrRates from './index';
-import assert from 'assert';
 
-describe('cbrRates(fn)', () => {
-  it('should return last rates', (done) => {
-    cbrRates((err, rates) => {
-      assert(!err, err);
-      assert(rates && typeof rates === 'object');
-      assert(rates.usd && typeof rates.usd === 'object');
-      assert(typeof rates.usd.par === 'number');
-      assert(typeof rates.usd.value === 'number');
-      done();
-    });
+test('should return last rates', t => {
+  t.plan(4);
+
+  cbrRates((err, rates) => {
+    t.assert(!err, err);
+    t.assert(typeof rates.usd === 'object');
+    t.assert(typeof rates.usd.par === 'number');
+    t.assert(typeof rates.usd.value === 'number');
   });
 });
 
-describe('cbrRates(date, fn)', () => {
-  it('should return rates for specified date', (done) => {
-    const date = new Date();
-    date.setYear(date.getFullYear() - 1);
+test('should return rates for specified date', t => {
+  t.plan(4);
+  const date = new Date();
+  date.setYear(date.getFullYear() - 1);
 
-    cbrRates(date, (err, rates) => {
-      assert(!err, err);
-      assert(rates && typeof rates === 'object');
-      assert(rates.usd && typeof rates.usd === 'object');
-      assert(typeof rates.usd.par === 'number');
-      assert(typeof rates.usd.value === 'number');
-      done();
-    });
+  cbrRates(date, (err, rates) => {
+    t.assert(!err, err);
+    t.assert(typeof rates.usd === 'object');
+    t.assert(typeof rates.usd.par === 'number');
+    t.assert(typeof rates.usd.value === 'number');
   });
 });
