@@ -1,26 +1,16 @@
 import test from 'ava';
 import cbrRates from './index';
 
-test('should return last rates', t => {
-  t.plan(4);
-
-  cbrRates((err, rates) => {
-    t.assert(!err, err);
-    t.assert(typeof rates.usd === 'object');
-    t.assert(typeof rates.usd.par === 'number');
-    t.assert(typeof rates.usd.value === 'number');
-  });
+test('should return last rates', async t => {
+  const {usd} = await cbrRates();
+  t.true(typeof usd.par === 'number');
+  t.true(typeof usd.value === 'number');
 });
 
-test('should return rates for specified date', t => {
-  t.plan(4);
+test('should return rates for specified date', async t => {
   const date = new Date();
   date.setYear(date.getFullYear() - 1);
-
-  cbrRates(date, (err, rates) => {
-    t.assert(!err, err);
-    t.assert(typeof rates.usd === 'object');
-    t.assert(typeof rates.usd.par === 'number');
-    t.assert(typeof rates.usd.value === 'number');
-  });
+  const {usd} = await cbrRates(date);
+  t.true(typeof usd.par === 'number');
+  t.true(typeof usd.value === 'number');
 });
