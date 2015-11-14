@@ -28,7 +28,7 @@ cbrRates(new Date()).then(rates => {
 
 ### cbrRates([date])
 
-Get object with last rates or rates for specified `date`
+Return last currency rates or rates for specified `date`
 
 ## License
 
