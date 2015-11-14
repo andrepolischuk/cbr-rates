@@ -13,27 +13,22 @@ npm install --save cbr-rates
 ## Usage
 
 ```js
-var cbrRates = require('cbr-rates');
+import cbrRates from 'cbr-rates';
 
-cbrRates(function(err, rates) {
-  rates.gbp; // {par: ..., value: ...}
-  rates.usd; // {par: ..., value: ...}
+cbrRates().then(rates => {
+  console.log(rates.usd); // {par: ..., value: ...}
+});
+
+cbrRates(new Date()).then(rates => {
+  console.log(rates.usd); // {par: ..., value: ...}
 });
 ```
 
 ## API
 
-### cbrRates(fn)
+### cbrRates([date])
 
-Get object with last rates
-
-### cbrRates(date, fn)
-
-Get object with rates for specified `date`
-
-```js
-cbrRates(new Date(), fn);
-```
+Get object with last rates or rates for specified `date`
 
 ## License
 
