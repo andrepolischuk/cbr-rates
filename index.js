@@ -1,5 +1,6 @@
 import format from 'dateformat';
 import isDate from 'is-date-object';
+import Promise from 'pinkie-promise';
 import sortKeys from 'sort-keys';
 import {get} from 'superagent';
 import xmlParser from 'xml-parser';
