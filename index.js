@@ -6,7 +6,7 @@ import {get} from 'superagent';
 import xmlParser from 'xml-parser';
 const url = 'http://www.cbr.ru/scripts/XML_daily.asp';
 
-export default date => {
+export default function cbrRates(date) {
   const request = get(url);
   if (isDate(date)) request.query({date_req: format(date, 'dd/mm/yyyy')});
   if (typeof window !== 'undefined') request.withCredentials();

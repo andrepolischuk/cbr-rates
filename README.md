@@ -2,7 +2,7 @@
 
 > Get currency rates from Central Bank of Russia
 
-[cbr-rates-cli][cbr-rates-cli] - CLI for this module
+[cbr-rates-cli][cbr-rates-cli] - CLI for this module.
 
 ## Install
 
@@ -28,7 +28,15 @@ cbrRates(new Date()).then(rates => {
 
 ### cbrRates([date])
 
-Return last currency rates or rates for specified `date`
+Return a promise that resolves to last currency rates
+or rates for specified `date`.
+
+#### date
+
+Type: `date`  
+Default: `new Date()`
+
+Date for which to get rates.
 
 ## License
 
