@@ -1,7 +1,22 @@
 {
   "name": "cbr-rates",
-  "description": "Get currency rates from Central Bank of Russia",
   "version": "0.3.3",
+  "description": "Get currency rates from Central Bank of Russia",
+  "main": "index.es5.js",
+  "jsnext:main": "index.js",
+  "files": [
+    "index.js",
+    "index.es5.js"
+  ],
+  "scripts": {
+    "test": "ava --require babel-register",
+    "prepublish": "babel index.js --out-file index.es5.js",
+    "postpublish": "rm -rf *.es5.js && git push --follow-tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrepolischuk/cbr-rates.git"
+  },
   "keywords": [
     "cbr",
     "central",
@@ -10,7 +25,12 @@
     "currency",
     "rates"
   ],
-  "repository": "andrepolischuk/cbr-rates",
+  "author": "Andrey Polischuk <andre.polischuk@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andrepolischuk/cbr-rates/issues"
+  },
+  "homepage": "https://github.com/andrepolischuk/cbr-rates",
   "dependencies": {
     "dateformat": "^1.0.11",
     "is-date-object": "^1.0.0",
@@ -25,13 +45,5 @@
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-preset-es2015": "^6.9.0",
     "babel-register": "^6.9.0"
-  },
-  "main": "index.es5.js",
-  "scripts": {
-    "test": "ava --require babel-register",
-    "prepublish": "babel index.js --out-file index.es5.js",
-    "postpublish": "rm -rf *.es5.js && git push --follow-tags"
-  },
-  "author": "Andrey Polischuk <andre.polischuk@gmail.com>",
-  "license": "MIT"
+  }
 }
