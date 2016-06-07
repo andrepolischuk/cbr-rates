@@ -1,5 +1,5 @@
 import test from 'ava';
-import cbrRates from './index.es5';
+import cbrRates from './index';
 
 test('return last rates', async t => {
   const {usd} = await cbrRates();
