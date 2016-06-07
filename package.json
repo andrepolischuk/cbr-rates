@@ -1,6 +1,6 @@
 {
   "name": "cbr-rates",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "Get currency rates from Central Bank of Russia",
   "main": "index.es5.js",
   "jsnext:main": "index.js",
